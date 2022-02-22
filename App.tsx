@@ -1,7 +1,7 @@
 import React from "react";
 import Home from "./screens/home";
-import AppLoading from "expo-app-loading";
 import { useFonts } from "expo-font";
+import AppLoading from "expo-app-loading";
 
 export default function App() {
   let [fontsLoaded] = useFonts({
