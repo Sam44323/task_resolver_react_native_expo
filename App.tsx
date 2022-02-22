@@ -17,7 +17,6 @@ export default function App() {
     { text: "create an app", key: "2" },
     { text: "play on the switch", key: "3" },
   ]);
-  const [text, setText] = useState("");
 
   const pressHandler = (key: string) => {
     setTodos((prevTodos) => {
@@ -27,11 +26,11 @@ export default function App() {
 
   const submitHandler = (text: string) => {
     if (text.length > 3) {
-      setText("");
       setTodos((prevTodos) => {
         return [{ text, key: Math.random().toString() }, ...prevTodos];
       });
     } else {
+      console.log("error");
       Alert.alert("OOPS", "Todo must be over 3 characters long", [
         { text: "Understood", onPress: () => console.log("alert closed") },
       ]);
@@ -39,22 +38,20 @@ export default function App() {
   };
 
   return (
-    <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
-      <View style={styles.container}>
-        <Header />
-        <View style={styles.content}>
-          <AddTodo submitHandler={submitHandler} />
-          <View style={styles.list}>
-            <FlatList
-              data={todos}
-              renderItem={({ item }) => (
-                <TodoItem item={item} pressHandler={pressHandler} />
-              )}
-            />
-          </View>
+    <View style={styles.container}>
+      <Header />
+      <View style={styles.content}>
+        <AddTodo submitHandler={submitHandler} />
+        <View style={styles.list}>
+          <FlatList
+            data={todos}
+            renderItem={({ item }) => (
+              <TodoItem item={item} pressHandler={pressHandler} />
+            )}
+          />
         </View>
       </View>
-    </TouchableWithoutFeedback>
+    </View>
   );
 }
 
