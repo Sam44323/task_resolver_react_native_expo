@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import {
   StyleSheet,
   View,
-  FlatList,
   Alert,
+  FlatList,
   TouchableWithoutFeedback,
   Keyboard,
 } from "react-native";
