@@ -3,7 +3,7 @@ import { StyleSheet, Button, TextInput, View, Text } from "react-native";
 import { globalStyles } from "../styles/globals";
 import { Formik } from "formik";
 
-export default function ReviewForm(props: any) {
+export default function ReviewForm() {
   return (
     <View style={globalStyles.container}>
       <Formik
@@ -12,7 +12,7 @@ export default function ReviewForm(props: any) {
           console.log(values);
         }}
       >
-        {(props) => (
+        {(props: any) => (
           <View>
             <TextInput
               style={globalStyles.input}
