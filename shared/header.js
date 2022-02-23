@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { ImageBackground, StyleSheet, Text, View } from "react-native";
 import { MaterialIcons } from "@expo/vector-icons";
 import { Dimensions } from "react-native";
 
@@ -9,7 +9,10 @@ export default function Header({ navigation }) {
   };
 
   return (
-    <View style={styles.header}>
+    <ImageBackground
+      style={styles.header}
+      source={require("../assets/game_bg.png")}
+    >
       <MaterialIcons
         name="menu"
         size={28}
@@ -17,7 +20,7 @@ export default function Header({ navigation }) {
         style={styles.icon}
       />
       <Text style={styles.headerText}>GameZone</Text>
-    </View>
+    </ImageBackground>
   );
 }
 
