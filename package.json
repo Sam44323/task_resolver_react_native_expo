@@ -1,6 +1,9 @@
 {
   "name": "task_updater",
   "version": "1.0.0",
+  "author": {
+    "name": "Sam"
+  },
   "scripts": {
     "start": "expo start --dev-client",
     "android": "expo run:android",
