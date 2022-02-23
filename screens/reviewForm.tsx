@@ -1,8 +1,9 @@
 import React from "react";
-import { StyleSheet, Button, TextInput, View, Text } from "react-native";
+import { TextInput, View, Text } from "react-native";
 import { globalStyles } from "../styles/globals";
 import { Formik } from "formik";
 import * as yup from "yup";
+import FlatButton from "../shared/button";
 
 const reviewSchema = yup.object({
   title: yup.string().required().min(4),
@@ -64,11 +65,7 @@ export default function ReviewForm({ addReview }: any) {
               {props.touched.rating && props.errors.rating}
             </Text>
 
-            <Button
-              color="maroon"
-              title="Submit"
-              onPress={props.handleSubmit as any}
-            />
+            <FlatButton onPress={props.handleSubmit} text="submit" />
           </View>
         )}
       </Formik>
