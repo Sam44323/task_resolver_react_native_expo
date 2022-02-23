@@ -14,10 +14,10 @@ export const HomeStack = () => (
         backgroundColor: "#eee",
       },
       headerTintColor: "#444",
-      height: 60,
+      height: 40,
     }}
   >
-    <Screen name="Home" component={Home} options={{ title: "GameZone" }} />
+    <Screen name="Home" component={Home} options={{ title: "Home" }} />
     <Screen
       name="review"
       component={ReviewDetails}
