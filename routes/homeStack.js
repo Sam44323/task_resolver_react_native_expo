@@ -10,8 +10,26 @@ export default function Navigator() {
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Home">
-        <Stack.Screen name="Home" component={Home} />
-        <Stack.Screen name="review" component={ReviewDetails} />
+        <Stack.Screen
+          name="Home"
+          component={Home}
+          options={{
+            title: "Home",
+            headerStyle: {
+              backgroundColor: "#eee",
+            },
+          }}
+        />
+        <Stack.Screen
+          name="review"
+          component={ReviewDetails}
+          options={{
+            title: "Review Details",
+            headerStyle: {
+              backgroundColor: "salmon",
+            },
+          }}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );
