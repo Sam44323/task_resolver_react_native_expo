@@ -2,9 +2,8 @@ import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
 import Home from "../screens/home";
 import ReviewDetails from "../screens/reviewDetails";
-import Header from "../shared/header";
 
-const homeStack = ({ navigation }) => {
+const homeStack = () => {
   const Stack = createStackNavigator();
   return (
     <Stack.Navigator
