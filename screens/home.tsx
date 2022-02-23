@@ -1,13 +1,7 @@
 import React from "react";
-import {
-  StyleSheet,
-  View,
-  Text,
-  Button,
-  FlatList,
-  TouchableOpacity,
-} from "react-native";
+import { View, Text, FlatList, TouchableOpacity } from "react-native";
 import { globalStyles } from "../styles/globals";
+import Card from "../shared/card";
 
 const Home = ({ navigation }: any) => {
   const [reviews, setReviews] = React.useState([
@@ -30,9 +24,6 @@ const Home = ({ navigation }: any) => {
       key: "3",
     },
   ]);
-  const navigationHandler = () => {
-    navigation.push("review");
-  };
 
   return (
     <View style={globalStyles.container}>
@@ -43,7 +34,9 @@ const Home = ({ navigation }: any) => {
             <TouchableOpacity
               onPress={() => navigation.navigate("review", { ...item })}
             >
-              <Text style={globalStyles.titleText}>{item.title}</Text>
+              <Card>
+                <Text style={globalStyles.titleText}>{item.title}</Text>
+              </Card>
             </TouchableOpacity>
           );
         }}
